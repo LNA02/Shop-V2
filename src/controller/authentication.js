@@ -37,7 +37,7 @@ class authentication {
         .then( ()=> {
             // res.send('delete thành cong ',req.params.id)
             console.log('Xóa thành công')
-            res.redirect('user/profile')
+            res.redirect('/')
         })
     }
     getUpdateUser(req,res,next){
