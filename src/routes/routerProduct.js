@@ -18,6 +18,10 @@ router.get('/authentication/create',user.createUser)
 router.get('/product/save/form',middlewaresAuthen.authentication,productController.form)
 router.post('/product/save',productController.save)
 router.get('/product/search', productController.search)
+router.get('/authentication/deleteUser/:id', user.deleteUser)
+router.get('/authentication/profile', user.profile)
+router.get('/authentication/getUpdateUser/:id',user.getUpdateUser)
+router.post('/authentication/setUpdateUser/:id',user.setUpdateUser)
 
 
 module.exports = router

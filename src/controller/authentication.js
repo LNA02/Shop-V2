@@ -32,5 +32,33 @@ class authentication {
         res.clearCookie("user")
         res.redirect('/');
     }
+    deleteUser(req, res, next) {
+        user.deleteOne({_id:req.params.id}).lean()
+        .then( ()=> {
+            // res.send('delete thành cong ',req.params.id)
+            console.log('Xóa thành công')
+            res.redirect('user/profile')
+        })
+    }
+    getUpdateUser(req,res,next){
+        user.findOne({_id:req.params.id}).lean()
+        .then((user)=>{
+            res.render('user/updateUser',{user})
+        })
+    }
+
+    setUpdateUser(req,res,next){
+        user.updateOne({_id:req.params.id},req.body).lean()
+        .then(()=>{
+            res.redirect('/')
+        })
+    }
+    profile(req, res, next) {
+        user.find({}).lean()
+            .then(user => {
+                res.render('user/profile',{user})
+            }
+        )
+    }
 }
 module.exports = new authentication

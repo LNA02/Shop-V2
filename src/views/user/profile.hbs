@@ -1,0 +1,21 @@
+<div class="row" style="margin: 20px;">
+    {{#each user}}
+        <div class="col col-lg-3" style="margin-bottom: 20px;" >
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Name: {{this.name}}</h5>
+                    <p class="card-text">Email: {{this.email}}</p>
+                    <p class="card-text">Password: {{this.password}}</p>
+                    <a href="/authentication/getUpdateUser/{{this._id}}" class="btn btn-raised btn-success pull-right">
+                        Update
+                    </a>
+                    <a href="/authentication/deleteUser/{{this._id}}" class="btn btn-raised btn-danger pull-right">
+                        Delete
+                    </a>
+                </div>
+            </div>
+            </a>          
+        </div>
+    {{/each}}
+</div>
+            
