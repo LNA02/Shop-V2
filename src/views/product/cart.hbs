@@ -1,31 +1,37 @@
 {{#if products}}
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="list-group">
-                {{#each product }}
-                    <div class="list-group-item border">
-                        <strong>{{ this.name }}</strong>
-                        <span class="badge price-cart">${{ this.price }}</span>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-raised btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Action
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="cart/reduce/{{ this._id }}">Reduce by 1</a>
-                                <a class="dropdown-item" href="cart/remove/{{ this._id }}">Remove All</a>
+            <div class="col-md-8">
+                <div class="list-group">
+                    <ul class="list-group">
+                    {{#each products }}
+                        <li class="list-group-item">
+                            <div class="list-group-item border">
+                                <strong>{{ this.item.name }}</strong>
+                                <p>${{ this.item.price }}</p>
+                                <p>Quantity:{{ this.qty }}</p>
+                                <div>
+                                    <button type="button" class="btn btn-primary">
+                                        <a href="cart/reduce/{{ this.item._id }}" style="color: white;">Reduce by 1</a>
+                                    </button>
+                
+                                    <button type="button" class="btn btn-danger">
+                                        <a href="cart/remove/{{ this.item._id }}" style="color: white;">Remove All</a>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <span class="total">{{ this.qty }}</span>
-                    </div>
-                {{/each}}
+                        </li>
+                    {{/each}}
+                    </ul>
+                </div>               
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <strong>Total: {{ totalPrice }}</strong>
+            <strong>Total price: $ {{ totalPrice }} </strong>
         </div>
     </div>
     <hr>
@@ -36,8 +42,10 @@
         </div>
     </div>
 {{else}}
-    <div class="empty">
-        <h2>Oops, your cart is empty</h2>
-        <img src="/icons/empty-cart.svg" alt="Empty cart">
+    <div class="d-flex justify-content-center" style="margin-top: 30px;">
+        <h2>Oops, your cart is empty</h2>      
+    </div>
+    <div class="d-flex justify-content-center">
+        <img src="https://assets.materialup.com/uploads/66fb8bdf-29db-40a2-996b-60f3192ea7f0/preview.png" alt="Empty cart">
     </div>
 {{/if}}

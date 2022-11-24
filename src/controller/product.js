@@ -29,7 +29,6 @@ class Product {
     delete(req, res, next) {
         product.deleteOne({_id:req.params.id}).lean()
         .then( ()=> {
-            // res.send('delete thành cong ',req.params.id)
             console.log('Xóa thành công')
             res.redirect('/')
         })
