@@ -42,11 +42,13 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <!-- Icon -->
+      {{#if user}}
       <a class="text-reset me-3" href="/cart">
         <i class="fas fa-shopping-cart"></i>
         <span class="badge badge-pill badge-secondary">{{session.cart.totalQty}}</span>
       </a>
-
+      {{else}}
+      {{/if}}
       <!-- Avatar -->
       <div class="dropdown">
         <a

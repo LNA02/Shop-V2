@@ -37,7 +37,7 @@ router.get('/cart/reduce/:id', function (req, res, next) {
     const cart = new Cart(req.session.cart ? req.session.cart : {});
     cart.reduceByOne(productId);
     req.session.cart = cart;
-    res.redirect('product/cart');
+    res.redirect('/cart');
 });
 
 router.get('/cart/remove/:id', function (req, res, next) {
@@ -45,7 +45,7 @@ router.get('/cart/remove/:id', function (req, res, next) {
     const cart = new Cart(req.session.cart ? req.session.cart : {});
     cart.removeItem(productId);
     req.session.cart = cart;
-    res.redirect('product/cart');
+    res.redirect('/cart');
 });
 
 router.get('/cart', function (req, res, next) {
