@@ -3,26 +3,42 @@
         <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="list-group">
-                    <ul class="list-group">
-                    {{#each products }}
-                        <li class="list-group-item">
-                            <div class="list-group-item border">
-                                <strong>{{ this.item.name }}</strong>
-                                <p>${{ this.item.price }}</p>
-                                <p>Quantity:{{ this.qty }}</p>
-                                <div>
-                                    <button type="button" class="btn btn-primary">
-                                        <a href="cart/reduce/{{ this.item._id }}" style="color: white;">Reduce by 1</a>
-                                    </button>
-                
-                                    <button type="button" class="btn btn-danger">
-                                        <a href="cart/remove/{{ this.item._id }}" style="color: white;">Remove All</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                    {{/each}}
-                    </ul>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{# each products}}
+                            <tr>
+                                <td>
+                                   {{this.item.name}} 
+                                </td>
+                                <td>
+                                    {{this.item.price}}
+                                </td>
+                                <td>
+                                    {{this.qty}}
+                                </td>
+                                <td>
+                                    <div>
+                                        <button type="button" class="btn btn-primary">
+                                            <a href="cart/reduce/{{ this.item._id }}" style="color: white;">Reduce by 1</a>
+                                        </button>
+                    
+                                        <button type="button" class="btn btn-danger">
+                                            <a href="cart/remove/{{ this.item._id }}" style="color: white;">Remove All</a>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
                 </div>               
             </div>
         </div>
@@ -31,7 +47,7 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <strong>Total price: $ {{ totalPrice }} </strong>
+            <strong style="margin-left:10% ;">Total price: $ {{ totalPrice }} </strong>
         </div>
     </div>
     <hr>

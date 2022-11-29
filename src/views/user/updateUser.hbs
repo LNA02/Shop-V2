@@ -3,11 +3,11 @@
     <form method="post" action="/authentication/setUpdateUser/{{user._id}}">
     <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Name</span>
-        <input type="text" class="form-control" name="name" placeholder="Name" >
+        <input type="text" class="form-control" name="name" placeholder="Name" value="{{user.name}}" >
     </div>
     <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Email</span>
-        <input type="text" class="form-control" name="email" placeholder="Email.@gmail.com" >
+        <input type="text" class="form-control" name="email" placeholder="Email.@gmail.com"  value="{{user.email}}">
     </div>
      <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Password</span>

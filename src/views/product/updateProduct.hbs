@@ -3,19 +3,19 @@
     <form method="post" action="/product/setupdate/{{product._id}}">
     <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Name</span>
-        <input type="text" class="form-control" name="name" placeholder="Name" >
+        <input type="text" class="form-control" name="name" value="{{product.name}}" >
     </div>
      <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Image</span>
-        <input type="text" class="form-control" name="image" placeholder="Link Image" >
+        <input type="text" class="form-control" name="image" placeholder="Link Image" value="{{product.image}}">
     </div>
     <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Price</span>
-        <input type="text" class="form-control" name="price" placeholder="Price" >
+        <input type="text" class="form-control" name="price" value="{{product.price}}"  >
     </div>
      <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Description</span>
-        <input type="text" class="form-control" name="description" placeholder="Description" >
+        <input type="text" class="form-control" name="description" value="{{product.description}}" >
     </div>
     <input type="submit">
     </form>
